@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('full.jpeg');
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1, h2, input, button {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+
+
+<div class="container">
+  <h2>Determine if a Number is Positive or Not</h2>
+  <p>Enter a number:</p>
+  <input type="text" id="numberInput">
+  <button onclick="checkNumber()">Check</button>
+  <p id="result"></p>
+</div>
+
+<script>
+function checkNumber() {
+  const userInput = document.getElementById("numberInput").value;
+
+  const number = parseFloat(userInput);
+
+  if (isNaN(number)) {
+    document.getElementById("result").innerHTML = "Invalid input. Please enter a valid number.";
+  } else {
+    if (number > 0) {
+      document.getElementById("result").innerHTML = "The number is positive.";
+      document.body.style.backgroundImage = "url('full1.png')";
+    } else if (number === 0) {
+      document.getElementById("result").innerHTML = "The number is zero.";
+      document.body.style.backgroundImage = "url('full3.png')";
+    } else {
+      document.getElementById("result").innerHTML = "The number is not positive.";
+      document.body.style.backgroundImage = "url('full2.png')";
+    }
+  }
+}
+</script>
+
+</body>
+</html>
